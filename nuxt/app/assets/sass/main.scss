@@ -1,3 +1,19 @@
+@use "abstracts/variable.scss";
+@use "themes/index";
+@use "components/navbar";
 
-@use 'themes/light';
-@use 'themes/dark';
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.top-navigation {
+    background-color: var(--topnav-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-navigation {
+    background-color: var(--mainnav-bg);
+}

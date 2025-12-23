@@ -1,9 +1,9 @@
-:root {
-  --bg-color: #1f2937;
-  --text-color: #fff;
-}
+.theme-dark {
+    --bg-color: #1f2937;
+    --text-color: #f9fafb;
 
-body.dark {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+    --topnav-bg: #0f172a;
+    --mainnav-bg: #1e293b;
+
+    --border-color: #374151;
 }

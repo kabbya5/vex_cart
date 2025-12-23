@@ -1,5 +1,5 @@
 <template>
     <div>
-        <div class="bg-red-600"> Hdlskdh </div>
+        <div class=""> Hdlskdh </div>
     </div>
 </template>
