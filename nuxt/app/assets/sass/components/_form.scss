@@ -1,0 +1,38 @@
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    label{
+        margin-bottom:0px;
+        font-size:16px;
+        font-weight: 400;
+        color: $text-color;
+    }
+
+    input,select{
+        margin-top: 5px;
+        border: 1px solid $border-color;
+        padding:10px 20px;
+        color: $text-color;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 8px;
+        transition:all 0.2s ease;
+
+        &::placeholder{
+            color:$text-color;
+            font-weight: 500;
+            opacity: 0.5;
+        }
+
+        &:focus{
+            outline: none;
+            border-color:1px solid $border-color;
+        }
+
+        &:hover{
+            border-color: darken($border-color,6%);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.default-modal{
+    background-color: $body-surface;
+    padding: 20px;
+    border-radius: 10px;
+
+    .header-title{
+        font-weight: 600;
+        font-size: 30px;
+        letter-spacing: 1.3px;
+        text-align: center;
+    }
+}

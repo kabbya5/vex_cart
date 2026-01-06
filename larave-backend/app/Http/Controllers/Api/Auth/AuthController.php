@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    private $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function register(Request $request){
 
         $request->validate([
@@ -22,7 +30,7 @@ class AuthController extends Controller
         $data = $request->except('password');
         $data['password'] = Hash::make($request->password);
 
-        $user = User::create($data);
+        $user = $userService->create($data);
 
         $token = $user->createToken('authToken')->accessToken;
 

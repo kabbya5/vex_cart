@@ -1,30 +1,24 @@
 <template>
-  <header class="top-navigation bg-topnav-bg border-b border-border-color">
+  <header class="top-navigation bg-topnav-bg">
     <!-- Top bar / branding -->
     <div class="container mx-auto py-2">
-      <div class="grid grid-cols-12 items-center gap-4">
+      <div class="flex justify-between items-center gap-4">
         <!-- Logo -->
-        <div class="logo col-span-2">
+        <div class="logo">
           <NuxtLink to="/" class="font-bold text-lg">
             Home
           </NuxtLink>
         </div>
-
-        <div class="col-span-4 text-sm">
-            <a href=""> Contact: 01943958348346 </a>
-            <a href=""> Email: kdhsli345@gamli.com </a>
-        </div>
-
         <!-- Navigation Links -->
-        <div class="col-span-6">
-          <nav class="flex flex-wrap justify-center md:justify-end gap-4">
-            <NuxtLink to="/shop" class="hover:text-blue-500">Shop 1</NuxtLink>
-            <NuxtLink to="/shop" class="hover:text-blue-500">Shop 2</NuxtLink>
-            <NuxtLink to="/shop" class="hover:text-blue-500">Shop 3</NuxtLink>
-            <NuxtLink to="/shop" class="hover:text-blue-500">Shop 4</NuxtLink>
+        <div class="">
+          <nav class="">
+            <NuxtLink to="/shop" class="hover:text-blue-500">Shop</NuxtLink>
+            <NuxtLink to="/shop" class="hover:text-blue-500"> Contact </NuxtLink>
+            <NuxtLink to="/shop" class="hover:text-blue-500"> Service </NuxtLink>
+            <NuxtLink to="/shop" class="hover:text-blue-500"> Block </NuxtLink>
             <NuxtLink to="/shop" class="hover:text-blue-500">Shop 5</NuxtLink>
             <NuxtLink to="/shop" class="hover:text-blue-500">Shop 6</NuxtLink>
-            <NuxtLink to="/shop" class="hover:text-blue-500">Shop 7</NuxtLink>
+            <ThemToggler/>
           </nav>
         </div>
       </div>

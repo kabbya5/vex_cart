@@ -1,19 +1,15 @@
-@use "abstracts/variable.scss";
-@use "themes/index";
-@use "components/navbar";
 
+@import './abstracts/variable';
+@import  './abstracts/utilities';
+
+@import './components/form';
+@import './components/navbar';
+@import './components/modal';
+@import './components/buttons';
+
+@import './pages/login';
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-/* Header */
-.top-navigation {
-    background-color: var(--topnav-bg);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.main-navigation {
-    background-color: var(--mainnav-bg);
+  background: $body-bg;
+  color: $text-color;
 }

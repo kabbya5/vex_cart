@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 
@@ -12,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Passport::ignoreRoutes();
+        Passport::ignoreRoutes();   
+
+        $this->app->singleton('userService',function($app){
+            return new UserService();
+        });
     }
 
     /**
