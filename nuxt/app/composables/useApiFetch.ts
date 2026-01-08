@@ -1,3 +1,4 @@
+
 type CustomFetchOptions = {
   headers?: Record<string, string>;
   method?: 'GET' | 'POST' | 'PATCH' | 'DELETE';
@@ -5,8 +6,11 @@ type CustomFetchOptions = {
   query?: Record<string, any>;
 };
 
+import {useErrorStore} from '~/stores/error';
+
 export const useApiFetch = async (url: string, options: CustomFetchOptions = {}) => {
   const config = useRuntimeConfig();
+  const errorStore = useErrorStore();
 
   try {
     const isFormData = options.body instanceof FormData;
@@ -23,6 +27,7 @@ export const useApiFetch = async (url: string, options: CustomFetchOptions = {})
       query: options.query,
     });
   } catch (err: any) {
+    errorStore.setError(err);
     throw err;
   }
 };

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <FrontendLoginForm v-if="isLoginForm"/>
+        <FrontendLoginForm v-if="isLoginForm" @close="isLoginForm=false"/>
         <header class="main-navigation">
             <!-- Main navigation -->
             <div class="container mx-auto py-2">

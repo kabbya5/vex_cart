@@ -4,15 +4,15 @@
 
             <h2 class="header-title"> Login </h2>
             
-            <form action="" class="mt-4">
+            <form @submit.prevent="handleLogin" class="mt-4">
                 <div class="form-group">
                     <label for=""> Email </label>
-                    <input class="form-control" type="text" placeholder="Enter your email">
+                    <input class="form-control" v-model="form.email" type="text" placeholder="Enter your email">
                 </div>
 
                 <div class="form-group">
                     <label for=""> Password </label>
-                    <input class="form-control" type="text" placeholder="Enter your email">
+                    <input class="form-control" v-model="form.password" type="text" placeholder="Enter your email">
                 </div>
 
                 <div class="flex justify-end">
@@ -32,3 +32,26 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+
+interface LoginForm{
+    email:string,
+    password:string,
+}
+
+import {useAuthStore} from '~/stores/auth';
+const authStore = useAuthStore();
+
+const emit = defineEmits(['close']);
+
+const form =  ref<LoginForm>({
+    email:'',
+    password:'',
+});
+
+const handleLogin = () =>{
+    authStore.login(form.value);
+}
+
+</script>

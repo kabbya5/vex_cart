@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function register(Request $request){
 
-        $request->validate([
+        $data = $request->validate([
             'first_name' => 'required|min:2|max:100',
             'last_name' => 'required|min:3|max:100',
             'email' => 'required|email|unique:users,email',
@@ -27,18 +27,20 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        $data = $request->except('password');
         $data['password'] = Hash::make($request->password);
 
-        $user = $userService->create($data);
+        $user = User::create($data);
 
         $token = $user->createToken('authToken')->accessToken;
 
-        return response()->json([
+        $response = response()->json([
             'success' => true,
-            'user'    => $user,
-            'token'   => $token
-        ], 201);
+            'user' => $user,
+        ]);
+
+        $cookie = cookie('auth_token', $token, 60 * 24, null, null,true, true);
+
+        return $response->withCookie($cookie);
     }
 
     public function login(Request $request){

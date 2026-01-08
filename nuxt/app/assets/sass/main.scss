@@ -1,11 +1,13 @@
-
 @import './abstracts/variable';
-@import  './abstracts/utilities';
+@import './abstracts/utilities';
+
+@import './animations/toast';
 
 @import './components/form';
 @import './components/navbar';
 @import './components/modal';
 @import './components/buttons';
+@import './components/toastAlerts';
 
 @import './pages/login';
 
