@@ -27,7 +27,8 @@ export const useApiFetch = async (url: string, options: CustomFetchOptions = {})
       query: options.query,
     });
   } catch (err: any) {
-    errorStore.setError(err);
+    const errorPayload = err?.data ?? err?.response ?? { message: err?.message || 'Unknown error' };
+    errorStore.setError(errorPayload);
     throw err;
   }
 };

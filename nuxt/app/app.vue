@@ -1,7 +1,6 @@
 <template>
-  <TostNotification/>
   <div class="font-body">
-    
+    <TostNotification/>
     <NuxtLayout> 
       <NuxtPage/>
     </NuxtLayout>

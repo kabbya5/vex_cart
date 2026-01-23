@@ -9,17 +9,17 @@
     z-index: 1000;
 
     .toast{
-        position: absolute;
+        position: relative;
         color: #fff;
         width:400px;
         height:45px;
-        background: $color-accent;
-        box-shadow: 0 0 20px lighten($text-color, 10%);
-        margin: 15px 0;
+        box-shadow: 0 0 20px darken($text-color, 10%);
+        margin: 5px 0;
         font-weight: 500;
+        transform: translateX(120%);
+        animation: slideInRight 2s ease forwards;
 
         .icon-box{
-            background: darken($color-accent, 5%);
             height: 100%;
             padding:0 10px;
         }
@@ -35,8 +35,47 @@
             bottom: 0;
             width: 100%;
             height: 5px;
-            background-color: darken($color-accent, $amount: 10%);
             animation: toast-progress 5s linear forwards;
+        }
+    }
+
+    .success{
+        background-color: $color-success;
+        .icon-box{
+            background: darken($color-success, 5%);
+        }
+        &::after{
+            background-color: darken($color-success, $amount: 10%);
+        }
+    }
+
+    .error{
+        background-color: $color-danger;
+        .icon-box{
+            background: darken($color-danger, 5%);
+        }
+        &::after{
+            background-color: darken($color-danger, $amount: 10%);
+        }
+    }
+
+     .warning{
+        background-color: $color-warning;
+        .icon-box{
+            background: darken($color-warning, 5%);
+        }
+        &::after{
+            background-color: darken($color-warning, $amount: 10%);
+        }
+    }
+
+    .info{
+        background-color: $color-info;
+        .icon-box{
+            background: darken($color-info, 5%);
+        }
+        &::after{
+            background-color: darken($color-info, $amount: 10%);
         }
     }
 }
